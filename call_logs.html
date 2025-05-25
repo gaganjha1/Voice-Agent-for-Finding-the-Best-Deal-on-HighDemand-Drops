@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DealFinder Call Logs - 2025-05-25</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script id="omnidimension-web-widget" async src="https://backend.omnidim.io/web_widget.js?secret_key=2bd67afa45c9b84c52432cd66146c2e0" ></script>
+    <style>
+        :root {
+            --primary-color: #3f51b5;
+            --secondary-color: #f50057;
+            --accent-color: #00bcd4;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --dark-bg: #212121;
+            --agent-bg: #e3f2fd;
+            --reseller-bg: #fff8e1;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--light-bg);
+        }
+        
+        .dashboard-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #5c6bc0 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        
+        .dashboard-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .stat-card {
+            flex: 1 1 200px;
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-card i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .stat-card .stat-value {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .stat-card .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .content-container {
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.9em;
+            background: white;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        tr:hover {
+            background-color: rgba(63, 81, 181, 0.05);
+        }
+        
+        .agent {
+            background-color: var(--agent-bg);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .reseller {
+            background-color: var(--reseller-bg);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .timestamp {
+            white-space: nowrap;
+            font-size: 0.8em;
+            color: #666;
+        }
+        
+        .filter-container {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-label {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        select, input {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        button:hover {
+            background-color: #303f9f;
+            transform: translateY(-2px);
+        }
+        
+        .btn-reset {
+            background-color: #f44336;
+        }
+        
+        .btn-reset:hover {
+            background-color: #d32f2f;
+        }
+        
+        .message-bubble {
+            position: relative;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin-bottom: 5px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .agent-bubble {
+            background-color: var(--agent-bg);
+            margin-right: auto;
+            border-bottom-left-radius: 0;
+        }
+        
+        .reseller-bubble {
+            background-color: var(--reseller-bg);
+            margin-left: auto;
+            border-bottom-right-radius: 0;
+        }
+        
+        .conversation-view-toggle {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+        
+        .view-toggle-btn {
+            padding: 8px 15px;
+            background-color: #eee;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .view-toggle-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 5px;
+        }
+        
+        .pagination button {
+            padding: 8px 12px;
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid #ddd;
+        }
+        
+        .pagination button.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .search-container {
+            position: relative;
+            flex-grow: 1;
+            max-width: 300px;
+        }
+        
+        .search-container input {
+            width: 100%;
+            padding-left: 35px;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        
+        .omnidimension-badge {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .omnidimension-badge a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        .omnidimension-badge a:hover {
+            color: #303f9f;
+        }
+        
+        .email-preview {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .integration-links {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .integration-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .integration-link i {
+            margin-right: 8px;
+        }
+        
+        .integration-link:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+        
+        .email-link i {
+            color: var(--primary-color);
+        }
+        
+        .data-link i {
+            color: #4caf50;
+        }
+        
+        .logged-data-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .logged-data-section h2 {
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .logged-data-section h2 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .data-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .data-card {
+            display: flex;
+            background-color: #f5f5f5;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .data-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .data-card-icon {
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .google-icon {
+            background-color: #0f9d58;
+        }
+        
+        .crm-icon {
+            background-color: #4285f4;
+        }
+        
+        .data-card-content {
+            padding: 15px;
+            flex: 1;
+        }
+        
+        .data-card-content h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+        
+        .data-card-content p {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .data-link-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            background-color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .data-link-btn i {
+            margin-right: 8px;
+        }
+        
+        .data-link-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .omnidimension-badge {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+        
+        .omnidimension-badge a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+        }
+        
+        .omnidimension-badge i {
+            margin-right: 8px;
+        }
+        
+        .omnidimension-badge:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-header">
+        <div class="header-content">
+            <h1><i class="fas fa-phone-alt"></i> DealFinder Call Logs</h1>
+            <p>Voice Agent Conversations - May 25, 2025</p>
+            
+            <!-- OmniDimension Voice Agent Link -->
+            <div class="omnidimension-badge">
+                <a href="https://omnidimension.ai/agents/deal-finder-v1" target="_blank">
+                    <i class="fas fa-robot"></i> Powered by OmniDimension Voice Agent
+                </a>
+            </div>
+        </div>
+        
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <i class="fas fa-store"></i>
+                <div class="stat-value">5</div>
+                <div class="stat-label">Resellers Contacted</div>
+            </div>
+            
+            <div class="stat-card">
+                <i class="fas fa-comments"></i>
+                <div class="stat-value">35</div>
+                <div class="stat-label">Total Interactions</div>
+            </div>
+            
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <div class="stat-value">12:45</div>
+                <div class="stat-label">Total Call Duration</div>
+            </div>
+            
+            <div class="stat-card">
+                <i class="fas fa-check-circle"></i>
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Completion Rate</div>
+            </div>
+        </div>
+        
+        <div class="content-container">
+            <div class="toggle-container">
+                <button id="table-view-btn" class="view-toggle active"><i class="fas fa-table"></i> Table View</button>
+                <button id="chat-view-btn" class="view-toggle"><i class="fas fa-comments"></i> Chat View</button>
+            </div>
+            
+            <!-- Integration Links -->
+            <div class="integration-links">
+                <a href="email_preview.html" class="integration-link email-link">
+                    <i class="fas fa-envelope"></i> View Email Preview
+                </a>
+                <a href="extracted_info.html" class="integration-link data-link">
+                    <i class="fas fa-table"></i> View Extracted Data
+                </a>
+            </div>
+            
+            <div class="filter-container">
+                <div class="filter-group">
+                    <span class="filter-label"><i class="fas fa-filter"></i> Filters:</span>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="reseller-filter">Reseller:</label>
+                    <select id="reseller-filter">
+                        <option value="all">All Resellers</option>
+                        <option value="SneakerHub">SneakerHub</option>
+                        <option value="KicksMaster">KicksMaster</option>
+                        <option value="SoleSociety">SoleSociety</option>
+                        <option value="UrbanFootwear">UrbanFootwear</option>
+                        <option value="PremiumSneaks">PremiumSneaks</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="speaker-filter">Speaker:</label>
+                    <select id="speaker-filter">
+                        <option value="all">All Speakers</option>
+                        <option value="agent">Agent</option>
+                        <option value="reseller">Reseller</option>
+                    </select>
+                </div>
+                
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Search conversations...">
+                </div>
+                
+                <button id="apply-filter"><i class="fas fa-check"></i> Apply</button>
+                <button id="reset-filter" class="btn-reset"><i class="fas fa-undo"></i> Reset</button>
+            </div>
+            
+            <div class="pagination">
+                <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <span class="pagination-info">Page 1 of 1</span>
+                <button class="pagination-btn" disabled>Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <!-- Logged Data Section (Feature #3) -->
+            <div class="logged-data-section">
+                <h2><i class="fas fa-database"></i> Logged Data</h2>
+                <p>All voice agent interactions and extracted information are logged in the following systems:</p>
+                
+                <div class="data-cards">
+                    <div class="data-card">
+                        <div class="data-card-icon google-icon">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="data-card-content">
+                            <h3>Google Sheets Log</h3>
+                            <p>Complete record of all reseller calls and extracted pricing data</p>
+                            <a href="https://docs.google.com/spreadsheets/d/1AbCdEfGhIjKlMnOpQrStUvWxYz/edit" class="data-link-btn" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Open Spreadsheet
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card">
+                        <div class="data-card-icon crm-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="data-card-content">
+                            <h3>CRM Dashboard</h3>
+                            <p>Detailed analytics and transcripts of all agent-reseller conversations</p>
+                            <a href="https://dealfinder-crm.com/dashboard" class="data-link-btn" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="loader" id="loader"></div>
+    
+    <table id="call-logs">
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Reseller</th>
+                <th>Speaker</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- SneakerHub Conversation -->
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:00:00</td>
+                <td>SneakerHub</td>
+                <td>Agent</td>
+                <td>Hello, I'm calling from DealFinder AI. I'm interested in purchasing the Air Jordan 1 High OG 'Chicago Reimagined' in size US 10. Could you tell me about your current pricing and availability?</td>
+            </tr>
+            <tr class="reseller">
+                <td class="timestamp">2025-05-25 18:00:15</td>
+                <td>SneakerHub</td>
+                <td>Reseller</td>
+                <td>The Air Jordan 1 High OG 'Chicago Reimagined' in size US 10 is priced at $349.99. I'd be happy to assist you with that.</td>
+            </tr>
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:00:30</td>
+                <td>SneakerHub</td>
+                <td>Agent</td>
+                <td>Could you tell me more about your delivery options and timeframes?</td>
+            </tr>
+            <tr class="reseller">
+                <td class="timestamp">2025-05-25 18:00:45</td>
+                <td>SneakerHub</td>
+                <td>Reseller</td>
+                <td>Our delivery time for this item is 3-5 business days. Let me provide you with that information.</td>
+            </tr>
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:01:00</td>
+                <td>SneakerHub</td>
+                <td>Agent</td>
+                <td>Do you have any special offers or promotions available for this product?</td>
+            </tr>
+            <tr class="reseller">
+                <td class="timestamp">2025-05-25 18:01:15</td>
+                <td>SneakerHub</td>
+                <td>Reseller</td>
+                <td>We do have a special offer: Free shipping on orders over $300. Thank you for your interest in our products.</td>
+            </tr>
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:01:30</td>
+                <td>SneakerHub</td>
+                <td>Agent</td>
+                <td>Thank you for the information. I'm comparing offers from several sellers and will get back to you if I decide to proceed with your offer. Have a great day!</td>
+            </tr>
+            
+            <!-- KicksMaster Conversation -->
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:02:00</td>
+                <td>KicksMaster</td>
+                <td>Agent</td>
+                <td>Hello, I'm calling from DealFinder AI. I'm interested in purchasing the Air Jordan 1 High OG 'Chicago Reimagined' in size US 10. Could you tell me about your current pricing and availability?</td>
+            </tr>
+            <tr class="reseller">
+                <td class="timestamp">2025-05-25 18:02:15</td>
+                <td>KicksMaster</td>
+                <td>Reseller</td>
+                <td>The Air Jordan 1 High OG 'Chicago Reimagined' in size US 10 is priced at $379.99. I'm super excited to tell you about this amazing deal!</td>
+            </tr>
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:02:30</td>
+                <td>KicksMaster</td>
+                <td>Agent</td>
+                <td>Could you tell me more about your delivery options and timeframes?</td>
+            </tr>
+            <tr class="reseller">
+                <td class="timestamp">2025-05-25 18:02:45</td>
+                <td>KicksMaster</td>
+                <td>Reseller</td>
+                <td>Our delivery time for this item is 1-2 business days. You're going to love these sneakers, they're flying off the shelves!</td>
+            </tr>
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:03:00</td>
+                <td>KicksMaster</td>
+                <td>Agent</td>
+                <td>Do you have any special offers or promotions available for this product?</td>
+            </tr>
+            <tr class="reseller">
+                <td class="timestamp">2025-05-25 18:03:15</td>
+                <td>KicksMaster</td>
+                <td>Reseller</td>
+                <td>We do have a special offer: 10% discount for returning customers. I might be able to work something out if you're ready to buy today!</td>
+            </tr>
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:03:30</td>
+                <td>KicksMaster</td>
+                <td>Agent</td>
+                <td>Thank you for the information. I'm comparing offers from several sellers and will get back to you if I decide to proceed with your offer. Have a great day!</td>
+            </tr>
+            
+            <!-- SoleSociety Conversation -->
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:04:00</td>
+                <td>SoleSociety</td>
+                <td>Agent</td>
+                <td>Hello, I'm calling from DealFinder AI. I'm interested in purchasing the Air Jordan 1 High OG 'Chicago Reimagined' in size US 10. Could you tell me about your current pricing and availability?</td>
+            </tr>
+            <tr class="reseller">
+                <td class="timestamp">2025-05-25 18:04:15</td>
+                <td>SoleSociety</td>
+                <td>Reseller</td>
+                <td>The Air Jordan 1 High OG 'Chicago Reimagined' in size US 10 is priced at $329.99. These are part of the iconic Chicago colorway series that first released in 1985.</td>
+            </tr>
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:04:30</td>
+                <td>SoleSociety</td>
+                <td>Agent</td>
+                <td>Could you tell me more about your delivery options and timeframes?</td>
+            </tr>
+            <tr class="reseller">
+                <td class="timestamp">2025-05-25 18:04:45</td>
+                <td>SoleSociety</td>
+                <td>Reseller</td>
+                <td>Our delivery time for this item is 5-7 business days. The quality on these is exceptional, with premium leather uppers and the classic Nike Air branding.</td>
+            </tr>
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:05:00</td>
+                <td>SoleSociety</td>
+                <td>Agent</td>
+                <td>Do you have any special offers or promotions available for this product?</td>
+            </tr>
+            <tr class="reseller">
+                <td class="timestamp">2025-05-25 18:05:15</td>
+                <td>SoleSociety</td>
+                <td>Reseller</td>
+                <td>We do have a special offer: Free limited edition shoelaces. These have been one of our most popular releases this year.</td>
+            </tr>
+            <tr class="agent">
+                <td class="timestamp">2025-05-25 18:05:30</td>
+                <td>SoleSociety</td>
+                <td>Agent</td>
+                <td>Thank you for the information. I'm comparing offers from several sellers and will get back to you if I decide to proceed with your offer. Have a great day!</td>
+            </tr>
+            
+            <!-- More conversations would continue here -->
+        </tbody>
+    </table>
+    
+    <script>
+        // Simple filter functionality for demo purposes
+        document.getElementById('apply-filter').addEventListener('click', function() {
+            const resellerFilter = document.getElementById('reseller-filter').value;
+            const speakerFilter = document.getElementById('speaker-filter').value;
+            
+            const rows = document.querySelectorAll('#call-logs tbody tr');
+            
+            rows.forEach(row => {
+                const resellerCell = row.querySelector('td:nth-child(2)').textContent;
+                const speakerCell = row.querySelector('td:nth-child(3)').textContent;
+                
+                let showRow = true;
+                
+                if (resellerFilter !== 'all' && resellerCell !== resellerFilter) {
+                    showRow = false;
+                }
+                
+                if (speakerFilter !== 'all' && speakerCell !== speakerFilter) {
+                    showRow = false;
+                }
+                
+                row.style.display = showRow ? '' : 'none';
+            });
+        });
+        
+        document.getElementById('reset-filter').addEventListener('click', function() {
+            document.getElementById('reseller-filter').value = 'all';
+            document.getElementById('speaker-filter').value = 'all';
+            
+            const rows = document.querySelectorAll('#call-logs tbody tr');
+            rows.forEach(row => {
+                row.style.display = '';
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create chat view container
+        const tableView = document.getElementById('call-logs');
+        const chatViewContainer = document.createElement('div');
+        chatViewContainer.id = 'chat-view';
+        chatViewContainer.className = 'chat-view';
+        chatViewContainer.style.display = 'none';
+        tableView.parentNode.insertBefore(chatViewContainer, tableView.nextSibling);
+
+        // Generate chat view content from table data
+        generateChatView();
+        
+        // View toggle functionality
+        const viewToggleButtons = document.querySelectorAll('.view-toggle-btn');
+        
+        viewToggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                viewToggleButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Show the selected view
+                const viewType = this.getAttribute('data-view');
+                if (viewType === 'table') {
+                    tableView.style.display = 'table';
+                    chatViewContainer.style.display = 'none';
+                } else {
+                    tableView.style.display = 'none';
+                    chatViewContainer.style.display = 'block';
+                }
+            });
+        });
+        
+        // Filtering functionality
+        const applyFilterButton = document.getElementById('apply-filter');
+        const resetFilterButton = document.getElementById('reset-filter');
+        const resellerFilter = document.getElementById('reseller-filter');
+        const speakerFilter = document.getElementById('speaker-filter');
+        const searchInput = document.getElementById('search-input');
+        
+        applyFilterButton.addEventListener('click', applyFilters);
+        resetFilterButton.addEventListener('click', resetFilters);
+        searchInput.addEventListener('input', debounce(applyFilters, 300));
+        
+        function applyFilters() {
+            // Show loader
+            document.getElementById('loader').style.display = 'block';
+            
+            setTimeout(() => {
+                const resellerValue = resellerFilter.value;
+                const speakerValue = speakerFilter.value;
+                const searchValue = searchInput.value.toLowerCase();
+                
+                // Filter table rows
+                const rows = document.querySelectorAll('#call-logs tbody tr');
+                let visibleCount = 0;
+                
+                rows.forEach(row => {
+                    const resellerCell = row.querySelector('td:nth-child(2)').textContent;
+                    const speakerCell = row.querySelector('td:nth-child(3)').textContent;
+                    const messageCell = row.querySelector('td:nth-child(4)').textContent;
+                    
+                    let showRow = true;
+                    
+                    if (resellerValue !== 'all' && resellerCell !== resellerValue) {
+                        showRow = false;
+                    }
+                    
+                    if (speakerValue !== 'all' && speakerCell !== speakerValue) {
+                        showRow = false;
+                    }
+                    
+                    if (searchValue && !messageCell.toLowerCase().includes(searchValue)) {
+                        showRow = false;
+                    }
+                    
+                    row.style.display = showRow ? '' : 'none';
+                    if (showRow) visibleCount++;
+                    
+                    // Highlight search matches
+                    if (showRow && searchValue) {
+                        highlightText(row.querySelector('td:nth-child(4)'), searchValue);
+                    } else {
+                        // Remove any existing highlights
+                        row.querySelector('td:nth-child(4)').innerHTML = messageCell;
+                    }
+                });
+                
+                // Filter chat view messages
+                const chatMessages = document.querySelectorAll('#chat-view .conversation-group');
+                
+                chatMessages.forEach(group => {
+                    const resellerName = group.getAttribute('data-reseller');
+                    let showGroup = resellerValue === 'all' || resellerName === resellerValue;
+                    
+                    if (showGroup && searchValue) {
+                        // Check if any message in this group contains the search text
+                        const messages = group.querySelectorAll('.message-bubble');
+                        let foundInGroup = false;
+                        
+                        messages.forEach(message => {
+                            const messageText = message.textContent;
+                            const isSpeakerMatch = speakerValue === 'all' || 
+                                (speakerValue === 'agent' && message.classList.contains('agent-bubble')) ||
+                                (speakerValue === 'reseller' && message.classList.contains('reseller-bubble'));
+                            
+                            const isTextMatch = messageText.toLowerCase().includes(searchValue);
+                            
+                            if (isSpeakerMatch && isTextMatch) {
+                                foundInGroup = true;
+                                // Highlight the text
+                                highlightText(message, searchValue);
+                            } else if (isSpeakerMatch) {
+                                message.style.display = 'block';
+                                // Remove any existing highlights
+                                message.innerHTML = messageText;
+                            } else {
+                                message.style.display = 'none';
+                            }
+                        });
+                        
+                        showGroup = foundInGroup;
+                    }
+                    
+                    group.style.display = showGroup ? 'block' : 'none';
+                });
+                
+                // Update visible count in stats
+                document.querySelector('.stat-card:nth-child(2) .stat-value').textContent = visibleCount;
+                
+                // Hide loader
+                document.getElementById('loader').style.display = 'none';
+            }, 300); // Simulate loading time for better UX
+        }
+        
+        function resetFilters() {
+            resellerFilter.value = 'all';
+            speakerFilter.value = 'all';
+            searchInput.value = '';
+            
+            // Reset table rows
+            const rows = document.querySelectorAll('#call-logs tbody tr');
+            rows.forEach(row => {
+                row.style.display = '';
+                // Remove any existing highlights
+                const messageCell = row.querySelector('td:nth-child(4)');
+                messageCell.innerHTML = messageCell.textContent;
+            });
+            
+            // Reset chat view
+            const chatMessages = document.querySelectorAll('#chat-view .conversation-group');
+            chatMessages.forEach(group => {
+                group.style.display = 'block';
+                const messages = group.querySelectorAll('.message-bubble');
+                messages.forEach(message => {
+                    message.style.display = 'block';
+                    message.innerHTML = message.textContent;
+                });
+            });
+            
+            // Reset stats
+            document.querySelector('.stat-card:nth-child(2) .stat-value').textContent = rows.length;
+        }
+        
+        // Helper function to highlight search text
+        function highlightText(element, searchText) {
+            const originalText = element.textContent;
+            const lowerText = originalText.toLowerCase();
+            const lowerSearchText = searchText.toLowerCase();
+            
+            let highlightedText = '';
+            let lastIndex = 0;
+            
+            let index = lowerText.indexOf(lowerSearchText);
+            while (index !== -1) {
+                // Add text before the match
+                highlightedText += originalText.substring(lastIndex, index);
+                
+                // Add the highlighted match
+                highlightedText += `<span class="highlight">${originalText.substring(index, index + searchText.length)}</span>`;
+                
+                // Move to the end of the match
+                lastIndex = index + searchText.length;
+                
+                // Find the next match
+                index = lowerText.indexOf(lowerSearchText, lastIndex);
+            }
+            
+            // Add any remaining text
+            highlightedText += originalText.substring(lastIndex);
+            
+            element.innerHTML = highlightedText;
+        }
+        
+        // Helper function to debounce search input
+        function debounce(func, delay) {
+            let timeout;
+            return function() {
+                const context = this;
+                const args = arguments;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), delay);
+            };
+        }
+        
+        // Animation for stat cards
+        const statCards = document.querySelectorAll('.stat-card');
+        statCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            });
+        });
+        
+        // Function to generate chat view from table data
+        function generateChatView() {
+            const rows = document.querySelectorAll('#call-logs tbody tr');
+            const chatView = document.getElementById('chat-view');
+            
+            // Group by reseller
+            const conversations = {};
+            
+            rows.forEach(row => {
+                const timestamp = row.querySelector('td:nth-child(1)').textContent;
+                const reseller = row.querySelector('td:nth-child(2)').textContent;
+                const speaker = row.querySelector('td:nth-child(3)').textContent;
+                const message = row.querySelector('td:nth-child(4)').textContent;
+                
+                if (!conversations[reseller]) {
+                    conversations[reseller] = [];
+                }
+                
+                conversations[reseller].push({
+                    timestamp,
+                    speaker,
+                    message
+                });
+            });
+            
+            // Create conversation groups
+            for (const reseller in conversations) {
+                const conversationGroup = document.createElement('div');
+                conversationGroup.className = 'conversation-group';
+                conversationGroup.setAttribute('data-reseller', reseller);
+                
+                const header = document.createElement('div');
+                header.className = 'conversation-header';
+                header.innerHTML = `
+                    <h3>
+                        <i class="fas fa-store"></i> 
+                        ${reseller}
+                        <span class="message-count">${conversations[reseller].length} messages</span>
+                    </h3>
+                    <div class="conversation-time">${conversations[reseller][0].timestamp}</div>
+                `;
+                
+                conversationGroup.appendChild(header);
+                
+                const messagesContainer = document.createElement('div');
+                messagesContainer.className = 'messages-container';
+                
+                conversations[reseller].forEach(item => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = `message-bubble ${item.speaker === 'Agent' ? 'agent-bubble' : 'reseller-bubble'}`;
+                    
+                    const avatar = document.createElement('div');
+                    avatar.className = 'avatar';
+                    avatar.innerHTML = item.speaker === 'Agent' ? 
+                        '<i class="fas fa-robot"></i>' : 
+                        '<i class="fas fa-user-tie"></i>';
+                    
+                    const messageContent = document.createElement('div');
+                    messageContent.className = 'message-content';
+                    messageContent.textContent = item.message;
+                    
+                    const messageTime = document.createElement('div');
+                    messageTime.className = 'message-time';
+                    messageTime.textContent = item.timestamp;
+                    
+                    messageDiv.appendChild(avatar);
+                    messageDiv.appendChild(messageContent);
+                    messageDiv.appendChild(messageTime);
+                    
+                    messagesContainer.appendChild(messageDiv);
+                });
+                
+                conversationGroup.appendChild(messagesContainer);
+                chatView.appendChild(conversationGroup);
+            }
+            
+            // Add CSS for chat view
+            const style = document.createElement('style');
+            style.textContent = `
+                .chat-view {
+                    margin-top: 20px;
+                }
+                
+                .conversation-group {
+                    background: white;
+                    border-radius: var(--border-radius);
+                    box-shadow: var(--box-shadow);
+                    margin-bottom: 30px;
+                    overflow: hidden;
+                }
+                
+                .conversation-header {
+                    background: var(--primary-color);
+                    color: white;
+                    padding: 15px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                
+                .conversation-header h3 {
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: white;
+                }
+                
+                .message-count {
+                    font-size: 0.8em;
+                    background: rgba(255, 255, 255, 0.2);
+                    padding: 3px 8px;
+                    border-radius: 10px;
+                    margin-left: 10px;
+                }
+                
+                .conversation-time {
+                    font-size: 0.8em;
+                    opacity: 0.8;
+                }
+                
+                .messages-container {
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                
+                .message-bubble {
+                    display: flex;
+                    gap: 10px;
+                    max-width: 80%;
+                    position: relative;
+                }
+                
+                .agent-bubble {
+                    align-self: flex-start;
+                }
+                
+                .reseller-bubble {
+                    align-self: flex-end;
+                    flex-direction: row-reverse;
+                }
+                
+                .avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.2em;
+                }
+                
+                .agent-bubble .avatar {
+                    background-color: var(--primary-color);
+                    color: white;
+                }
+                
+                .reseller-bubble .avatar {
+                    background-color: var(--accent-color);
+                    color: white;
+                }
+                
+                .message-content {
+                    padding: 12px 15px;
+                    border-radius: 10px;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                    position: relative;
+                }
+                
+                .agent-bubble .message-content {
+                    background-color: var(--agent-bg);
+                    border-bottom-left-radius: 0;
+                }
+                
+                .reseller-bubble .message-content {
+                    background-color: var(--reseller-bg);
+                    border-bottom-right-radius: 0;
+                }
+                
+                .message-time {
+                    font-size: 0.7em;
+                    color: #666;
+                    position: absolute;
+                    bottom: -18px;
+                }
+                
+                .agent-bubble .message-time {
+                    left: 50px;
+                }
+                
+                .reseller-bubble .message-time {
+                    right: 50px;
+                }
+                
+                .highlight {
+                    background-color: #ffff00;
+                    padding: 2px 0;
+                    border-radius: 2px;
+                }
+            `;
+            
+            document.head.appendChild(style);
+        }
+        
+        // Add pagination to the table
+        addPagination();
+        
+        function addPagination() {
+            const rows = document.querySelectorAll('#call-logs tbody tr');
+            const rowsPerPage = 10;
+            const pageCount = Math.ceil(rows.length / rowsPerPage);
+            
+            // Create pagination container
+            const paginationContainer = document.createElement('div');
+            paginationContainer.className = 'pagination';
+            tableView.parentNode.insertBefore(paginationContainer, tableView.nextSibling);
+            
+            // Create pagination buttons
+            for (let i = 1; i <= pageCount; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.textContent = i;
+                pageButton.addEventListener('click', () => goToPage(i));
+                
+                if (i === 1) pageButton.classList.add('active');
+                
+                paginationContainer.appendChild(pageButton);
+            }
+            
+            // Show only the first page initially
+            goToPage(1);
+            
+            function goToPage(page) {
+                // Update active button
+                const buttons = paginationContainer.querySelectorAll('button');
+                buttons.forEach((btn, index) => {
+                    if (index + 1 === page) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                // Show only rows for the current page
+                rows.forEach((row, index) => {
+                    if (index >= (page - 1) * rowsPerPage && index < page * rowsPerPage) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

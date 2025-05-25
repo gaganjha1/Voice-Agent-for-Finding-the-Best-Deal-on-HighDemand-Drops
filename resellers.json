@@ -1,0 +1,99 @@
+{
+  "resellers": [
+    {
+      "id": 1,
+      "name": "SneakerHub",
+      "contact": {
+        "phone": "+1-555-123-4567",
+        "email": "sales@sneakerhub.com"
+      },
+      "product": {
+        "name": "Air Jordan 1 High OG 'Chicago Reimagined'",
+        "size": "US 10",
+        "condition": "New",
+        "authenticity": "Verified Authentic"
+      },
+      "price": 349.99,
+      "delivery_time": "3-5 business days",
+      "availability": "In Stock",
+      "special_offers": "Free shipping on orders over $300",
+      "personality": "Professional and straightforward"
+    },
+    {
+      "id": 2,
+      "name": "KicksMaster",
+      "contact": {
+        "phone": "+1-555-234-5678",
+        "email": "support@kicksmaster.com"
+      },
+      "product": {
+        "name": "Air Jordan 1 High OG 'Chicago Reimagined'",
+        "size": "US 10",
+        "condition": "New",
+        "authenticity": "Verified Authentic"
+      },
+      "price": 379.99,
+      "delivery_time": "1-2 business days",
+      "availability": "Limited Stock (3 pairs left)",
+      "special_offers": "10% discount for returning customers",
+      "personality": "Enthusiastic and eager to negotiate"
+    },
+    {
+      "id": 3,
+      "name": "SoleSociety",
+      "contact": {
+        "phone": "+1-555-345-6789",
+        "email": "info@solesociety.com"
+      },
+      "product": {
+        "name": "Air Jordan 1 High OG 'Chicago Reimagined'",
+        "size": "US 10",
+        "condition": "New",
+        "authenticity": "Verified Authentic"
+      },
+      "price": 329.99,
+      "delivery_time": "5-7 business days",
+      "availability": "In Stock",
+      "special_offers": "Free limited edition shoelaces",
+      "personality": "Knowledgeable and passionate about sneakers"
+    },
+    {
+      "id": 4,
+      "name": "UrbanFootwear",
+      "contact": {
+        "phone": "+1-555-456-7890",
+        "email": "service@urbanfootwear.com"
+      },
+      "product": {
+        "name": "Air Jordan 1 High OG 'Chicago Reimagined'",
+        "size": "US 10",
+        "condition": "New",
+        "authenticity": "Verified Authentic"
+      },
+      "price": 359.99,
+      "delivery_time": "2-3 business days",
+      "availability": "In Stock",
+      "special_offers": "Buy now, pay later option available",
+      "personality": "Casual and friendly"
+    },
+    {
+      "id": 5,
+      "name": "PremiumSneaks",
+      "contact": {
+        "phone": "+1-555-567-8901",
+        "email": "orders@premiumsneaks.com"
+      },
+      "product": {
+        "name": "Air Jordan 1 High OG 'Chicago Reimagined'",
+        "size": "US 10",
+        "condition": "New",
+        "authenticity": "Verified Authentic"
+      },
+      "price": 399.99,
+      "delivery_time": "Next day delivery",
+      "availability": "In Stock",
+      "special_offers": "Includes exclusive sneaker care kit",
+      "personality": "Premium, high-end service oriented"
+    }
+  ]
+}

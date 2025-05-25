@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Top 3 Deals for Air Jordan 1 Chicago Sneakers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #1e88e5;
+            --accent-color: #ffc107;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --dark-bg: #212121;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .email-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #ff5252 100%);
+            color: white;
+        }
+        
+        .logo {
+            max-width: 180px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        h1 {
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 28px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 30px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            font-weight: 500;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 500;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e6f7ff;
+            transition: var(--transition);
+        }
+        
+        .rank-1 {
+            background-color: rgba(255, 215, 0, 0.2);
+            border-left: 4px solid #ffd700;
+            font-weight: bold;
+        }
+        
+        .rank-2 {
+            background-color: rgba(192, 192, 192, 0.2);
+            border-left: 4px solid #c0c0c0;
+            font-weight: bold;
+        }
+        
+        .rank-3 {
+            background-color: rgba(205, 127, 50, 0.2);
+            border-left: 4px solid #cd7f32;
+            font-weight: bold;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            font-size: 0.9em;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+        }
+        
+        .contact-card {
+            flex: 1 1 calc(33% - 15px);
+            min-width: 200px;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-card strong {
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-right: 5px;
+        }
+        
+        .badge-price {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .badge-delivery {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+        }
+        
+        .badge-offer {
+            background-color: #fff8e1;
+            color: #ff6f00;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: #1565c0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .highlight {
+            background-color: rgba(255, 193, 7, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* OmniDimension Link Styles */
+        .omnidimension-badge {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+        
+        .omnidimension-badge a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+        }
+        
+        .omnidimension-badge i {
+            margin-right: 8px;
+        }
+        
+        .omnidimension-badge:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Email Screenshot Styles */
+        .screenshot-container {
+            border: 1px dashed #ccc;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .screenshot-header {
+            background-color: #f5f5f5;
+            padding: 8px 15px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px dashed #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .screenshot-date {
+            font-size: 0.85em;
+            color: #888;
+        }
+        
+        /* Logged Data Styles */
+        .data-link-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            border-left: 4px solid #4285f4;
+        }
+        
+        .data-link {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+        
+        .data-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .data-link-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        
+        .google-sheets-icon {
+            background-color: #0f9d58;
+            color: white;
+        }
+        
+        .crm-icon {
+            background-color: #4285f4;
+            color: white;
+        }
+        
+        .data-link-text {
+            flex: 1;
+        }
+        
+        .data-link-text h4 {
+            margin: 0 0 5px 0;
+            font-weight: 500;
+        }
+        
+        .data-link-text p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .data-link-arrow {
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .contact-card {
+                flex: 1 1 100%;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://via.placeholder.com/180x60?text=DealFinder" alt="DealFinder Logo" class="logo">
+            <h1>Your Top 3 Deals</h1>
+            <p>For Air Jordan 1 High OG 'Chicago Reimagined' - Size US 10</p>
+            
+            <!-- OmniDimension Voice Agent Link - Feature #1 -->
+            <div class="omnidimension-badge">
+                <a href="https://omnidimension.ai/agents/deal-finder-v1" target="_blank">
+                    <i class="fas fa-robot"></i> Powered by OmniDimension Voice Agent
+                </a>
+            </div>
+        </div>
+
+        <div class="content">
+            <p>Dear Sneaker Enthusiast,</p>
+            
+            <p>Our AI voice agent has completed its search for the best deals on your requested sneakers. After contacting <span class="highlight">5 different resellers</span> and analyzing their offers, we've identified the top 3 options based on price, delivery time, and availability.</p>
+
+            <!-- Email Screenshot showing top 3 deals - Feature #2 -->
+            <div class="screenshot-container">
+                <div class="screenshot-header">
+                    <div><i class="fas fa-camera"></i> Email Screenshot</div>
+                    <span class="screenshot-date">Generated on May 25, 2025</span>
+                </div>
+                
+                <img src="https://via.placeholder.com/700x350?text=Air+Jordan+1+Chicago+Reimagined" alt="Air Jordan 1 Chicago Reimagined" class="product-image">
+
+                <h2>Top 3 Deals for Air Jordan 1 High OG 'Chicago Reimagined'</h2>
+                
+                <table>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Seller</th>
+                        <th>Price</th>
+                        <th>Delivery</th>
+                        <th>Availability</th>
+                        <th>Special Offer</th>
+                    </tr>
+                    <tr class="rank-1">
+                        <td><strong>1</strong></td>
+                        <td>SoleSociety</td>
+                        <td><span class="badge badge-price">$329.99</span></td>
+                        <td><span class="badge badge-delivery">5-7 business days</span></td>
+                        <td>In Stock</td>
+                        <td><span class="badge badge-offer">Free limited edition shoelaces</span></td>
+                    </tr>
+                    <tr class="rank-2">
+                        <td><strong>2</strong></td>
+                        <td>SneakerHub</td>
+                        <td><span class="badge badge-price">$349.99</span></td>
+                        <td><span class="badge badge-delivery">3-5 business days</span></td>
+                        <td>In Stock</td>
+                        <td><span class="badge badge-offer">Free shipping on orders over $300</span></td>
+                    </tr>
+                    <tr class="rank-3">
+                        <td><strong>3</strong></td>
+                        <td>UrbanFootwear</td>
+                        <td><span class="badge badge-price">$359.99</span></td>
+                        <td><span class="badge badge-delivery">2-3 business days</span></td>
+                        <td>In Stock</td>
+                        <td><span class="badge badge-offer">Buy now, pay later option</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Why We Selected These Deals</h3>
+            <p>Our AI agent evaluated these offers based on a combination of factors:</p>
+            <ul>
+                <li><strong>Price (50%):</strong> Lower prices received higher rankings</li>
+                <li><strong>Delivery Time (30%):</strong> Faster delivery options were preferred</li>
+                <li><strong>Availability (20%):</strong> In-stock items were prioritized</li>
+                <li><strong>Special Offers:</strong> Added value through promotions or extras</li>
+            </ul>
+
+            <h3>Contact Information</h3>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <strong>1. SoleSociety</strong>
+                    <p>Phone: +1-555-345-6789<br>
+                    Email: <a href="mailto:info@solesociety.com">info@solesociety.com</a></p>
+                    <a href="#" class="btn">Contact Seller</a>
+                </div>
+                
+                <div class="contact-card">
+                    <strong>2. SneakerHub</strong>
+                    <p>Phone: +1-555-123-4567<br>
+                    Email: <a href="mailto:sales@sneakerhub.com">sales@sneakerhub.com</a></p>
+                    <a href="#" class="btn">Contact Seller</a>
+                </div>
+                
+                <div class="contact-card">
+                    <strong>3. UrbanFootwear</strong>
+                    <p>Phone: +1-555-456-7890<br>
+                    Email: <a href="mailto:service@urbanfootwear.com">service@urbanfootwear.com</a></p>
+                    <a href="#" class="btn">Contact Seller</a>
+                </div>
+            </div>
+            
+            <!-- Logged Data (Google Sheet or CRM entry) - Feature #3 -->
+            <div class="data-link-container">
+                <h3><i class="fas fa-database"></i> Logged Data</h3>
+                <p>All interactions and data collected during this search have been logged for your reference.</p>
+                
+                <a href="https://docs.google.com/spreadsheets/d/1AbCdEfGhIjKlMnOpQrStUvWxYz/edit" class="data-link" target="_blank">
+                    <div class="data-link-icon google-sheets-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <div class="data-link-text">
+                        <h4>Google Sheets Data Log</h4>
+                        <p>Complete record of all reseller interactions and price data</p>
+                    </div>
+                    <div class="data-link-arrow">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </a>
+                
+                <a href="https://dealfinder-crm.com/entries/25052025-aj1" class="data-link" target="_blank">
+                    <div class="data-link-icon crm-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="data-link-text">
+                        <h4>CRM Entry Dashboard</h4>
+                        <p>View detailed analytics and conversation transcripts</p>
+                    </div>
+                    <div class="data-link-arrow">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="footer">
+                <p>This information was gathered by our AI voice agent on May 25, 2025. Prices and availability may change.</p>
+                <p>To purchase, contact the seller directly using the information provided above.</p>
+                <p>If you have any questions or need further assistance, please reply to this email or contact our support team at <a href="mailto:support@dealfinder.ai">support@dealfinder.ai</a>.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add some simple animations and interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate contact cards on hover
+            const contactCards = document.querySelectorAll('.contact-card');
+            contactCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                });
+            });
+            
+            // Add click event for buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('In a real implementation, this would open a contact form or initiate a call to the seller.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
